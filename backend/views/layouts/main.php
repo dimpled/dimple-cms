@@ -25,7 +25,7 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
             NavBar::begin([
-                'brandLabel' => 'My Company',
+                'brandLabel' => 'DIMPLE-CMS',
                 'brandUrl' => Yii::$app->homeUrl,
                 'options' => [
                     'class' => 'navbar-inverse navbar-fixed-top',
@@ -35,12 +35,23 @@ AppAsset::register($this);
                 ['label' => 'Home', 'url' => ['/site/index']],
             ];
             if (Yii::$app->user->isGuest) {
-                $menuItems[] = ['label' => 'Login', 'url' => ['/site/login']];
+                $menuItems[] = ['label' => 'Sign In', 'url' => ['/administrator/authen/signin']];
+                $menuItems[] = ['label' => 'Sign Up', 'url' => ['/administrator/registration/signup']];
             } else {
                 $menuItems[] = [
-                    'label' => 'Logout (' . Yii::$app->user->identity->username . ')',
-                    'url' => ['/site/logout'],
-                    'linkOptions' => ['data-method' => 'post']
+                    'label' => 'Settings',
+                    'items' => [
+                        ['label' => 'System Log', 'url' => ['/administrator/system-log/index']],
+                        ['label' => 'Login Log', 'url' => ['/administrator/system-login/index']],
+                        ['label' => 'User Manage', 'url' => ['/administrator/user-manage/index']]
+                    ]
+                ];
+                $menuItems[] = [
+                    'label' => 'Account (' . Yii::$app->user->identity->username . ')',
+                    'items' => [
+                        ['label' => 'Profile', 'url' => ['/administrator/profile/index']],
+                        ['label' => 'Sign Out (' . Yii::$app->user->identity->username . ')', 'url' => ['/administrator/authen/signout'], 'linkOptions' => ['data-method' => 'post']],
+                    ]
                 ];
             }
             echo Nav::widget([
