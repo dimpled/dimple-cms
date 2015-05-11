@@ -16,6 +16,7 @@ use yii\helpers\BaseFileHelper;
 class PopupController extends Controller
 {
 	public function actionIndex(){
+		echo 'xxx';
 		return $this->render('index');
 	}
 }
