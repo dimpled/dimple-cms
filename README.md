@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/dimpled/dimple-cms.svg?branch=develop)](https://travis-ci.org/dimpled/dimple-cms)
 Yii 2 Advanced Application Template
 ===================================
 
