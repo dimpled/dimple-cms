@@ -25,7 +25,6 @@ class AppAsset extends AssetBundle
     ];
     public $depends = [
         'yii\web\YiiAsset',
-        'yii\bootstrap\BootstrapAsset',
-        'dimple\notify\BootstrapNotifyAssets'
+        'yii\bootstrap\BootstrapAsset'
     ];
 }

@@ -40,6 +40,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 </div>
 
+
 <?php
 use yii\bootstrap\Modal;
 Modal::begin([

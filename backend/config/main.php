@@ -20,14 +20,6 @@ return [
         ],
     ],
     'components' => [
-        'as globalAccess'=>[
-            'class'=>'\dimple\administrator\behaviors\GlobalAccessBehavior',
-            'rules'=>[
-                'controllers'=>['system-log','system-login'],
-                'allow' => true,
-                'roles' => ['Admin'],
-            ]
-        ],
         'cache' => [
             'class' => 'yii\caching\ApcCache',
         ],
@@ -48,6 +40,15 @@ return [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+
+        // 'i18n'=>[
+        //     'translations' => [
+        //         'user*'=> [
+        //             'class' => 'yii\i18n\PhpMessageSource',
+        //             'basePath' => "@amnah/yii2/user/messages",
+        //         ]
+        //     ]
+        // ]
     ],
     'params' => $params,
 ];

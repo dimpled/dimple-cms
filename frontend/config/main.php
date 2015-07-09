@@ -12,6 +12,7 @@ return [
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',
     'components' => [
+    
         'urlManagerBackend' => [
             'class' => 'yii\web\urlManager',
             'baseUrl' => '/yii2/dimple-cms/backend/web',

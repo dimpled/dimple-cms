@@ -8,7 +8,9 @@ return [
        '@dimple/notify' =>'@backend/runtime/tmp-extensions/yii2-bootstrap-notify'
     ],
     'components' => [
-        
+        'assetManager' => [
+            'appendTimestamp' => true,
+        ],
         'authManager' => [
             'class' => 'yii\rbac\DbManager',
             'defaultRoles' => ['user'],
@@ -50,15 +52,12 @@ return [
         ],
     ],
     'modules'=>[
-	    // 'user' => [
-	    //     'class' => 'dektrium\user\Module',
-     //        'enableUnconfirmedLogin' => true,
-     //        'confirmWithin' => 21600,
-     //        'cost' => 12,
-     //        'admins' => ['admin'],
-     //        'modelMap' => [
-     //            'LoginForm' => 'dimple\settings\models\LoginForm',
-     //        ],
-	    // ],
+	    'user' => [
+	        'class' => 'dektrium\user\Module',
+            'enableUnconfirmedLogin' => true,
+            'confirmWithin' => 21600,
+            'cost' => 12,
+            'admins' => ['admin']
+	    ],
     ]
 ];
